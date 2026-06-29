@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { withBasePath } from "@/lib/base-path";
 
 type BrandMarkProps = {
   compact?: boolean;
@@ -11,7 +12,7 @@ export function BrandMark({ compact = false, className }: BrandMarkProps) {
     <div className={cn("flex items-center gap-3", className)}>
       <span className="relative flex size-10 overflow-hidden rounded-2xl border border-border bg-white/8 shadow-lg shadow-sky-950/20">
         <Image
-          src="/careeros-mark.png"
+          src={withBasePath("/careeros-mark.png")}
           alt=""
           width={80}
           height={80}

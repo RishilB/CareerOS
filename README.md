@@ -39,6 +39,12 @@ npm run build
 
 For a root GitHub Pages site, build without that environment variable.
 
+This repository includes a GitHub Actions workflow at `.github/workflows/deploy-pages.yml` that builds the static export and publishes it to GitHub Pages from the `main` branch.
+
+After the workflow completes, the site will be available at:
+
+`https://RishilB.github.io/CareerOS/`
+
 ## Structure
 
 - `src/app` route files

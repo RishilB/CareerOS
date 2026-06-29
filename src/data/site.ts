@@ -14,6 +14,7 @@ import {
   UserRoundSearch,
   Waypoints,
 } from "lucide-react";
+import { withBasePath } from "@/lib/base-path";
 
 export type NavItem = {
   href: string;
@@ -118,7 +119,7 @@ export type FaqItem = {
 export const careerOsGptUrl =
   "https://chatgpt.com/g/g-6a426101774c8191acc7ce794097d3ad-careeros";
 
-export const manualPromptPath = "/careeros-claude-gemini-system-prompt.md";
+export const manualPromptPath = withBasePath("/careeros-claude-gemini-system-prompt.md");
 
 export const navItems: NavItem[] = [
   { href: "/", label: "Home" },
@@ -304,7 +305,7 @@ export const activationPlatforms: ActivationPlatform[] = [
     name: "ChatGPT",
     accentClass: "bg-white",
     logo: "CG",
-    logoSrc: "/logo-chatgpt.svg",
+    logoSrc: withBasePath("/logo-chatgpt.svg"),
     recommendation: "Live GPT",
     mode: "gpt",
     status: "available",
@@ -326,7 +327,7 @@ export const activationPlatforms: ActivationPlatform[] = [
     name: "Claude",
     accentClass: "bg-white",
     logo: "CL",
-    logoSrc: "/logo-claude.svg",
+    logoSrc: withBasePath("/logo-claude.svg"),
     recommendation: "Prompt-based setup",
     mode: "prompt",
     status: "available",
@@ -349,7 +350,7 @@ export const activationPlatforms: ActivationPlatform[] = [
     name: "Gemini",
     accentClass: "bg-white",
     logo: "GM",
-    logoSrc: "/logo-gemini.svg",
+    logoSrc: withBasePath("/logo-gemini.svg"),
     recommendation: "Prompt-based setup",
     mode: "prompt",
     status: "available",
@@ -380,7 +381,7 @@ export const activationSuccessFlow = [
 export const toolResources: ToolResource[] = [
   {
     name: "ChatGPT",
-    logoSrc: "/logo-chatgpt.svg",
+    logoSrc: withBasePath("/logo-chatgpt.svg"),
     logoTone: "white",
     access: "Free tier",
     purpose: "A primary workspace for CareerOS coaching and everyday career work.",
@@ -390,7 +391,7 @@ export const toolResources: ToolResource[] = [
   },
   {
     name: "Claude",
-    logoSrc: "/logo-claude.svg",
+    logoSrc: withBasePath("/logo-claude.svg"),
     logoTone: "color",
     access: "Free tier",
     purpose: "Long-form reasoning, writing refinement, and deeper thought partnership.",
@@ -400,7 +401,7 @@ export const toolResources: ToolResource[] = [
   },
   {
     name: "Gemini",
-    logoSrc: "/logo-gemini.svg",
+    logoSrc: withBasePath("/logo-gemini.svg"),
     logoTone: "color",
     access: "Free tier",
     purpose: "General-purpose AI with strong Google ecosystem alignment.",
@@ -410,7 +411,7 @@ export const toolResources: ToolResource[] = [
   },
   {
     name: "Perplexity",
-    logoSrc: "/logo-perplexity.svg",
+    logoSrc: withBasePath("/logo-perplexity.svg"),
     logoTone: "white",
     access: "Free tier",
     purpose: "Source-backed research for companies, industries, and current context.",
@@ -420,7 +421,7 @@ export const toolResources: ToolResource[] = [
   },
   {
     name: "Canva",
-    logoSrc: "/logo-canva.svg",
+    logoSrc: withBasePath("/logo-canva.svg"),
     logoTone: "white",
     access: "Free tier",
     purpose: "Visual packaging for resumes, portfolios, and event materials.",
@@ -430,7 +431,7 @@ export const toolResources: ToolResource[] = [
   },
   {
     name: "Excalidraw AI",
-    logoSrc: "/logo-excalidraw.svg",
+    logoSrc: withBasePath("/logo-excalidraw.svg"),
     logoTone: "white",
     access: "Open source",
     purpose: "Quick visual thinking and framework sketching.",
@@ -440,7 +441,7 @@ export const toolResources: ToolResource[] = [
   },
   {
     name: "Grammarly",
-    logoSrc: "/logo-grammarly.svg",
+    logoSrc: withBasePath("/logo-grammarly.svg"),
     logoTone: "white",
     access: "Free tier",
     purpose: "Writing correction and tone refinement across platforms.",
@@ -450,7 +451,7 @@ export const toolResources: ToolResource[] = [
   },
   {
     name: "Notion",
-    logoSrc: "/logo-notion.svg",
+    logoSrc: withBasePath("/logo-notion.svg"),
     logoTone: "white",
     access: "Free tier",
     purpose: "Workspace support for organizing goals, notes, and execution.",

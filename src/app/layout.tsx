@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Footer } from "@/components/site/footer";
 import { Navigation } from "@/components/site/navigation";
+import { withBasePath } from "@/lib/base-path";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -27,9 +28,9 @@ export const metadata: Metadata = {
     type: "website",
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    icon: withBasePath("/favicon.ico"),
+    shortcut: withBasePath("/favicon.ico"),
+    apple: withBasePath("/apple-touch-icon.png"),
   },
   twitter: {
     card: "summary_large_image",
