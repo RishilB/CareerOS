@@ -33,17 +33,33 @@
 }
 
 html {
+  background: var(--background);
   color-scheme: dark;
   scroll-behavior: smooth;
 }
 
 body {
+  position: relative;
+  isolation: isolate;
   min-height: 100vh;
-  background:
-    radial-gradient(circle at top, rgba(14, 165, 233, 0.16), transparent 32%),
-    linear-gradient(180deg, #09111f 0%, #070b14 55%, #04070d 100%);
+  background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at top, rgba(14, 165, 233, 0.2), transparent 32%),
+    linear-gradient(rgba(148, 163, 184, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.055) 1px, transparent 1px);
+  background-size: auto, 32px 32px, 32px 32px;
+  background-position: center top, 0 0, 0 0;
+  opacity: 0.9;
 }
 
 body::selection {
@@ -83,10 +99,7 @@ button {
 }
 
 .grid-glow {
-  background-image:
-    linear-gradient(rgba(148, 163, 184, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
-  background-size: 32px 32px;
+  background: transparent;
 }
 
 .themed-scrollbar {
