@@ -126,7 +126,7 @@ export const navItems: NavItem[] = [
   { href: "/activate", label: "Activate" },
   { href: "/capabilities", label: "Capabilities" },
   { href: "/resources", label: "Resources" },
-  { href: "/demo", label: "Demo" },
+  { href: "/demo", label: "Examples" },
   { href: "/faq", label: "FAQ" },
 ];
 
@@ -134,7 +134,7 @@ export const footerLinks = [
   { href: "/activate", label: "Activate Your AI Coach" },
   { href: "/capabilities", label: "Capabilities" },
   { href: "/resources", label: "Resources" },
-  { href: "/demo", label: "Live Demo" },
+  { href: "/demo", label: "Examples" },
 ];
 
 export const homeOutcomes: HomeOutcome[] = [
@@ -666,17 +666,18 @@ export const demoConversations: DemoConversation[] = [
   {
     title: "Resume + JD Alignment",
     studentContext: "MBA student applying for a business analyst internship with a generic resume.",
-    useCase: "Use CareerOS to analyze a job description, diagnose resume gaps, and rewrite weak bullets truthfully.",
+    useCase:
+      "Show how to share a JD, a weak resume bullet, and real evidence so CareerOS can help tailor the application truthfully.",
     takeaway:
-      "The strongest CareerOS use is not asking for a rewrite. It is sharing the target role, resume evidence, and JD so CareerOS can coach positioning.",
+      "CareerOS gives better answers when the student brings the JD, the resume, and the actual project details. The coach can then improve positioning without inventing experience.",
     messages: [
       {
         speaker: "Student",
-        text: "I want to apply for a Business Analyst internship. Here is the JD: requirements include Excel, SQL basics, dashboarding, stakeholder communication, and problem solving. My resume bullet says: 'Worked on sales data analysis project in college.' Can you help?",
+        text: "I want to apply for a Business Analyst internship. I pasted the JD below. It says the role needs Excel, SQL basics, dashboarding, stakeholder communication, and problem solving. My resume currently says: 'Worked on sales data analysis project in college.' Can you help me make this relevant without exaggerating anything?",
       },
       {
         speaker: "CareerOS",
-        text: "Yes. I will treat this as a JD alignment task. The role is looking for proof in four areas: analysis, tools, business interpretation, and communication. Your current bullet is too vague because it does not show the dataset, method, output, or business value. Before rewriting, answer one question: what did you actually analyze and what was the final output?",
+        text: "Yes. I will treat this as JD alignment, not generic resume rewriting. Right now the bullet is too vague to prove fit. I need one detail before I rewrite it: what was the dataset, what did you analyze, and what business insight or recommendation came out of the project?",
       },
       {
         speaker: "Student",
@@ -684,97 +685,191 @@ export const demoConversations: DemoConversation[] = [
       },
       {
         speaker: "CareerOS",
-        text: "Good. Now we have real evidence. A stronger bullet would be: 'Analyzed 3 months of retail sales data using Excel pivot tables to identify low repeat purchases in a key product category and recommended a bundle offer to improve customer retention.' This works because it shows tool, dataset, insight, and recommendation. If you want to align it further to the JD, add one more bullet about presenting the dashboard or recommendation to stakeholders.",
+        text: "That is usable evidence. A stronger bullet is: 'Analyzed 3 months of retail sales data using Excel pivot tables and charts to identify low repeat purchases in a product category and recommended a bundle offer to improve customer retention.' It works because it shows tool, timeframe, insight, and recommendation.",
       },
       {
         speaker: "Student",
-        text: "Can you tell me what else my resume should emphasize for this role?",
+        text: "What else should I change so the resume looks closer to this role?",
       },
       {
         speaker: "CareerOS",
-        text: "Prioritize these five changes: 1. Move analytics projects higher than unrelated activities. 2. Add a Skills section with Excel, SQL basics, dashboarding, data interpretation, and presentation. 3. Rewrite project bullets to show business insight, not only analysis. 4. Add one communication bullet if you presented findings. 5. Prepare to explain how your analysis led to a recommendation. Your next action: share your full resume and I will score it for this JD across target alignment, evidence quality, ATS readability, and skill fit.",
+        text: "Prioritize five changes. 1. Move analytics projects above unrelated activities. 2. Add a Skills section with Excel, SQL basics, dashboarding, and presentation. 3. Rewrite every project bullet to show business outcome, not just activity. 4. Add one line that shows communication if you presented the work. 5. Keep the language concrete so an ATS and a recruiter can both understand it quickly. If you want, paste the full resume next and I will score it against this JD.",
+      },
+    ],
+  },
+  {
+    title: "LinkedIn Positioning",
+    studentContext: "MBA student wants a stronger LinkedIn profile before applying to internships.",
+    useCase:
+      "Show how to ask CareerOS for a profile review, share the current text, and iterate on headline and about section.",
+    takeaway:
+      "CareerOS works best when the student gives the current LinkedIn text and the target role. That lets the coach rewrite positioning instead of producing generic advice.",
+    messages: [
+      {
+        speaker: "Student",
+        text: "I want to improve my LinkedIn profile for consulting internships. My current headline is just 'MBA Student'. I know that is weak, but I am not sure what to replace it with.",
+      },
+      {
+        speaker: "CareerOS",
+        text: "It is weak because it does not communicate direction, skills, or proof. Before I rewrite it, send me three things: your target role, 2 to 3 strengths you actually want to be known for, and one project or experience that supports that direction.",
+      },
+      {
+        speaker: "Student",
+        text: "Target role is consulting analyst. Strengths: structured thinking, presentations, and research. Relevant experience: I helped with a market entry project for a consumer brand and created a short recommendation deck.",
+      },
+      {
+        speaker: "CareerOS",
+        text: "Good. A cleaner headline would be: 'MBA Candidate | Consulting Analyst Aspirant | Structured Problem Solving, Research, and Executive Presentations'. It is specific without overclaiming. For the About section, start with your direction, add proof from the market entry project, and finish with what kind of opportunity you are pursuing.",
+      },
+      {
+        speaker: "Student",
+        text: "Can you write the About section too?",
+      },
+      {
+        speaker: "CareerOS",
+        text: "Yes. Here is a draft: 'I am an MBA student building a career in consulting, with a focus on structured problem solving, research, and executive communication. In a recent market entry project, I worked on market sizing, competitor review, and a recommendation deck for a consumer brand. I enjoy turning ambiguity into a clear point of view and a practical next step. I am looking for opportunities where I can contribute through analysis, synthesis, and client-ready communication while continuing to learn from high-performing teams.'",
+      },
+      {
+        speaker: "Student",
+        text: "What should I add in Featured or Skills so recruiters can see it quickly?",
+      },
+      {
+        speaker: "CareerOS",
+        text: "Add a recommendation deck, a strong project summary, and a short post or document that shows your thinking. For skills, keep only what you can defend in an interview: research, PowerPoint, Excel, structured problem solving, presentation, stakeholder communication, and teamwork. Remove anything that looks inflated or irrelevant.",
       },
     ],
   },
   {
     title: "Interview Tomorrow",
-    studentContext: "MBA marketing student with a first-round interview the next day.",
-    useCase: "Use CareerOS for urgent interview triage, answer structure, company prep, and mock follow-ups.",
+    studentContext: "MBA marketing student has a first-round interview the next day and needs a focused prep sprint.",
+    useCase:
+      "Show how CareerOS can turn a time-sensitive request into a short, structured plan with mock follow-ups.",
     takeaway:
-      "CareerOS adapts to urgency. It does not force a long plan when the student needs a focused 24-hour preparation sprint.",
+      "When the interview is tomorrow, CareerOS should narrow the work to a few high-value answers, a company brief, and a small set of story-based questions.",
     messages: [
       {
         speaker: "Student",
-        text: "I have an interview tomorrow for a marketing internship. I am nervous and I do not know what to prepare first.",
+        text: "I have an interview tomorrow for a marketing internship at an FMCG company. I am nervous and I do not know what to prepare first.",
       },
       {
         speaker: "CareerOS",
-        text: "We should treat this as a 24-hour preparation sprint. I need three details: company name, role description if available, and one marketing-related project or experience you can speak about. While you gather that, your priority order is: 60-second introduction, why marketing, why this company, 5 STAR stories, and 6 likely questions.",
+        text: "We should treat this as a 24-hour sprint. I need three things: the company name, the role description if you have it, and one marketing-related project or experience you can speak about. While you gather that, focus on a 60-second introduction, why marketing, why FMCG, 5 STAR stories, and 6 likely questions.",
       },
       {
         speaker: "Student",
-        text: "The company is an FMCG brand. The role is marketing intern. My project was a consumer behavior survey for a new snack product.",
+        text: "The company is NestWell Foods. The role is marketing intern. My strongest project is a consumer behavior survey for a new snack product. I helped collect responses and turn them into a simple positioning recommendation.",
       },
       {
         speaker: "CareerOS",
-        text: "Good. Your profile should be positioned around consumer understanding, structured thinking, and campaign curiosity. For 'Tell me about yourself,' use this structure: current MBA identity, marketing interest, proof from your consumer survey project, and why the internship fits. Draft answer: 'I am an MBA student specializing in marketing, with a strong interest in consumer behavior and brand growth. In a recent project, I worked on a consumer survey for a new snack product, where I helped identify purchase drivers and translate responses into positioning recommendations. That experience made me interested in how FMCG brands convert consumer insight into campaigns and product decisions. I am now looking for a marketing internship where I can contribute to research, campaign planning, and execution while learning from a consumer-focused team.'",
+        text: "Good. Your answer to 'Tell me about yourself' should connect MBA identity, marketing interest, the survey project, and the internship. A strong structure is: current profile, what kind of work energizes you, what evidence you have, and why this role fits. I would not start with your full academic history.",
       },
       {
         speaker: "Student",
-        text: "What questions should I practice?",
+        text: "Can you draft the answer and tell me what to emphasize?",
       },
       {
         speaker: "CareerOS",
-        text: "Practice these first: 1. Tell me about yourself. 2. Why marketing? 3. Why FMCG? 4. Explain your consumer survey project. 5. What insight did you find and how would a brand use it? 6. Tell me about a time you worked in a team. 7. What is one campaign you liked and why? 8. What is your weakness? For the project question, be ready for follow-ups on sample size, survey method, key insight, recommendation, and what you would improve.",
+        text: "Draft: 'I am an MBA student specializing in marketing with a strong interest in consumer behavior and brand growth. In a recent project, I worked on a consumer survey for a new snack product, where I helped identify purchase drivers and convert responses into positioning recommendations. That experience made me more interested in how FMCG brands use consumer insight to guide campaigns and product decisions. I am now looking for a marketing internship where I can contribute to research, planning, and execution while learning from a consumer-focused team.' Emphasize consumer insight, structured thinking, and why FMCG specifically.",
       },
       {
         speaker: "Student",
-        text: "Can we do a mock question?",
+        text: "What questions should I practice tonight?",
       },
       {
         speaker: "CareerOS",
-        text: "Yes. Answer this in 90 seconds: Why do you want to work in marketing, specifically in FMCG? After your answer, I will score it on structure, evidence, company relevance, and communication clarity.",
+        text: "Practice these first: 1. Tell me about yourself. 2. Why marketing? 3. Why FMCG? 4. Walk me through your consumer survey project. 5. What insight did you find and how would a brand use it? 6. Tell me about a time you worked in a team. 7. What is one campaign you liked and why? 8. What is your weakness? For the project question, be ready to answer sample size, survey method, key insight, recommendation, and what you would improve.",
+      },
+      {
+        speaker: "Student",
+        text: "Can we do one mock question right now?",
+      },
+      {
+        speaker: "CareerOS",
+        text: "Yes. Answer this in 90 seconds: Why do you want to work in marketing at an FMCG company, and what from your consumer survey project makes you a credible fit? After you answer, I will score structure, evidence, relevance, and clarity.",
       },
     ],
   },
   {
-    title: "Career Direction + Learning Plan",
-    studentContext: "MBA student unsure whether to pursue consulting, analytics, or marketing.",
-    useCase: "Use CareerOS to convert confusion into options, experiments, and a 30-day skill-building plan.",
+    title: "Consulting Fit + Case",
+    studentContext: "MBA student wants consulting but does not know how to build the story or start case prep.",
+    useCase:
+      "Show how to ask CareerOS for role fit, story building, and a structured case interview start.",
     takeaway:
-      "When direction is unclear, CareerOS should not jump to resumes. It first narrows choices using interests, evidence, market fit, and next experiments.",
+      "CareerOS should not jump into case drills before the student has a fit story. The best prompt gives background, target firms, and honest strengths or gaps.",
     messages: [
       {
         speaker: "Student",
-        text: "I am confused. I am an MBA student and I do not know whether I should go into consulting, analytics, or marketing.",
+        text: "I want to target consulting, but I keep giving generic answers in interviews. I am not sure what my story should be or how to start case practice.",
       },
       {
         speaker: "CareerOS",
-        text: "This is a career direction problem, so we should not start with resume optimization yet. I will help you compare the three paths using four filters: interest, evidence, market fit, and skill gap. First, answer this: which projects or subjects have you enjoyed most so far?",
+        text: "We should separate this into two tasks: fit story and case skill. First I need your background in one line, the target firms if you have them, and 2 experiences you can honestly use. Do not send me your whole resume yet.",
       },
       {
         speaker: "Student",
-        text: "I liked market research and business analytics. I am decent at presentations, but I am not very strong in coding.",
+        text: "Background: MBA student with marketing and analytics interest. Target firms: Deloitte, KPMG, and Accenture. Experiences: a market entry project and a student club leadership role.",
       },
       {
         speaker: "CareerOS",
-        text: "Based on that, your strongest near-term direction may be marketing analytics or business analyst roles, because they combine research, analysis, and communication without requiring deep coding at the start. Consulting is still possible, but it will require more structured problem-solving and case practice. Pure marketing is possible too, but your analytics interest could differentiate you.",
+        text: "That is enough to start. Your fit story should explain why consulting, why now, and why you. For example: you like structured problem solving, you have evidence from research and leadership, and you want to work in an environment where clear thinking and communication matter every day.",
       },
       {
         speaker: "Student",
-        text: "What should I do for the next 30 days?",
+        text: "Can you give me a stronger version I can practice?",
       },
       {
         speaker: "CareerOS",
-        text: "Use a 30-day validation plan. Week 1: analyze 10 job descriptions across marketing analytics, business analyst, and consulting analyst roles. Build a skill map. Week 2: complete one Excel dashboard using a real dataset and write a one-page business insight summary. Week 3: speak to 3 alumni, one from each path, and ask what skills matter most. Week 4: update your resume and LinkedIn around the strongest direction. Your output should be one project, one role shortlist, one revised headline, and one decision on which path to prioritize for applications.",
+        text: "Draft: 'I am interested in consulting because I enjoy structured problem solving, fast-paced learning, and turning analysis into recommendations. In my MBA, I have enjoyed market research and analytics because they force me to look at a problem from multiple angles before drawing a conclusion. In a market entry project, I worked through competitor research and recommendation framing, and in a student club role I learned to coordinate people and communicate clearly under pressure. Consulting feels like the right place to use those strengths while continuing to build judgment across industries.'",
       },
       {
         speaker: "Student",
-        text: "Can you give me a LinkedIn headline for this direction?",
+        text: "Now how should I start case practice?",
       },
       {
         speaker: "CareerOS",
-        text: "Use a headline that signals direction without overclaiming: 'MBA Candidate | Marketing Analytics and Business Insights | Market Research, Excel Dashboards, Data Storytelling'. This works because it connects your marketing and analytics interests, names credible skills, and stays truthful. Next action: build the Excel dashboard project so the headline has evidence behind it.",
+        text: "Start with one simple case type: profitability. Do not try to learn every framework at once. Here is the prompt to use next: 'Run me through a beginner-friendly profitability case. Ask one question at a time, wait for my answer, and score my structure after each step.' That is a better way to practice than asking for a giant list of case frameworks.",
+      },
+    ],
+  },
+  {
+    title: "Networking + Follow-up",
+    studentContext: "MBA student wants to reach alumni and follow up after a call without sounding robotic.",
+    useCase:
+      "Show how CareerOS can draft outreach, refine tone, and create a follow-up after a conversation.",
+    takeaway:
+      "The best networking prompts include the recipient, context, reason for outreach, and the exact ask. CareerOS can then help the student sound specific and professional.",
+    messages: [
+      {
+        speaker: "Student",
+        text: "I want to message an alum who works at Bain. I do not want the message to sound copied from the internet. I want it short and respectful.",
+      },
+      {
+        speaker: "CareerOS",
+        text: "Good. Send me four details: who the person is, where they work, what role you want, and why you are reaching out to them specifically. The more context you give, the less generic the message will be.",
+      },
+      {
+        speaker: "Student",
+        text: "The alum is from my college, works at Bain in Mumbai, and I am targeting consulting analyst roles. I want to ask for 10 minutes to understand the recruiting process and what they look for in candidates.",
+      },
+      {
+        speaker: "CareerOS",
+        text: "Here is a clean message: 'Hi [Name], I am an MBA student from [College] and saw that you are now with Bain in Mumbai. I am exploring consulting analyst roles and would love to learn from your experience if you have 10 minutes. I am especially interested in understanding the recruiting process and the skills Bain values most in candidates. If you are open to it, I would really appreciate the chance to connect.'",
+      },
+      {
+        speaker: "Student",
+        text: "That is good. What if they reply and I have a call with them next week?",
+      },
+      {
+        speaker: "CareerOS",
+        text: "Before the call, prepare 4 questions: why they chose consulting, what Bain looks for in interviews, how they would prepare if they were in your position, and what mistakes students make during networking. After the call, send a follow-up that thanks them, mentions one specific thing you learned, and keeps the relationship open.",
+      },
+      {
+        speaker: "Student",
+        text: "Can you write the follow-up too?",
+      },
+      {
+        speaker: "CareerOS",
+        text: "Yes. Draft: 'Hi [Name], thank you again for taking the time to speak with me today. I especially appreciated your perspective on how Bain evaluates structured thinking and communication during interviews. Your suggestion to practice with a clear recommendation at the end was very helpful. I will apply that as I continue preparing. Thanks again for your guidance, and I hope we stay in touch.'",
       },
     ],
   },
@@ -784,41 +879,56 @@ export const faqItems: FaqItem[] = [
   {
     question: "What is CareerOS?",
     answer:
-      "CareerOS is a personal AI career coach available as a live Custom GPT in ChatGPT, with supporting prompt-based setup for Claude and Gemini.",
+      "CareerOS is a personal AI career coach for MBA students and young professionals. It is built to help with resume work, LinkedIn positioning, interview preparation, company research, skill-gap analysis, networking, and placement planning. The goal is not casual chat. The goal is to help students make better career decisions and improve their employability over time.",
   },
   {
     question: "Why not just use ChatGPT directly?",
     answer:
-      "You can, but CareerOS gives students a structured coaching posture, better conversation starters, and repeatable workflows for resumes, interviews, research, and weekly growth.",
+      "You can use ChatGPT directly, but CareerOS gives you a stronger operating model. It starts with career context, uses coaching-style prompts, and keeps the conversation focused on practical outputs such as resume improvements, interview answers, research summaries, and next actions. In short, CareerOS reduces the amount of thinking you need to do just to start a useful career conversation.",
   },
   {
     question: "Do I need ChatGPT Plus?",
     answer:
-      "The best experience is the live CareerOS GPT in ChatGPT. Access to GPTs may depend on the student's ChatGPT account and current OpenAI availability.",
+      "The live CareerOS GPT works best inside ChatGPT, but access depends on the student's ChatGPT plan and the current availability of GPTs in their account. If a student cannot access the live GPT, they can still use the Claude or Gemini setup path with the provided system prompt.",
   },
   {
     question: "Can I use Claude or Gemini instead?",
     answer:
-      "Yes. ChatGPT is the recommended live GPT experience, while Claude and Gemini are supported through prompt-based setup.",
+      "Yes. ChatGPT is the preferred live experience, but Claude and Gemini are supported through a manual setup prompt. That means students can still use CareerOS even if they prefer another AI platform or do not have GPT access in ChatGPT.",
   },
   {
     question: "Will CareerOS remember my information?",
     answer:
-      "CareerOS itself does not store student data. Memory depends on the AI platform you choose and how that platform handles chat history, projects, or memory features.",
+      "CareerOS itself does not store student data. Any memory or persistence depends on the platform the student uses and whether that platform supports chat history, memory, projects, or custom instructions. For that reason, students should re-share important context when starting a new thread or revisit their Career Profile when needed.",
   },
   {
     question: "Can I upload my resume and other documents?",
     answer:
-      "Yes, if the AI platform you are using supports uploads in your current plan or interface. That can make CareerOS more useful for tailored coaching.",
+      "Yes, if the AI platform supports uploads in the student's current plan or interface. Uploading a resume, job description, LinkedIn profile, or project notes usually makes CareerOS much more useful because it can coach against real evidence instead of guessing from a short summary.",
   },
   {
     question: "Do I need to activate CareerOS every time?",
     answer:
-      "Usually no. After setup, students can continue working inside the same platform, though behavior depends on how each tool handles ongoing conversation context.",
+      "Usually no. Once CareerOS is activated, students can keep using the same chat or workspace and continue the conversation. They only need to reintroduce context if they start a new thread, switch platforms, or the AI loses the earlier setup.",
   },
   {
     question: "Can I keep using CareerOS after graduation?",
     answer:
-      "Yes. The workflows remain useful for job search, career growth, networking, interview preparation, and long-term professional development.",
+      "Yes. The same workflows remain useful after graduation for job search, role transitions, networking, interview preparation, performance communication, and longer-term professional growth. CareerOS is designed to stay relevant after campus placements too.",
+  },
+  {
+    question: "How should I use CareerOS to get the best answers?",
+    answer:
+      "Give CareerOS the actual context: your target role, company, resume, LinkedIn text, job description, project details, or the exact question you want help with. If you are asking for a rewrite or review, paste the material directly. If you are asking for strategy, tell it your deadline, your current stage, and what you have already tried. The more concrete the input, the better the coaching.",
+  },
+  {
+    question: "What should I not ask CareerOS to do?",
+    answer:
+      "Do not ask it to fabricate experience, invent achievements, misrepresent your background, or guarantee a job. CareerOS is designed to improve positioning and preparation, not to create false credentials. It will be more useful when you give it the truth, even if the starting point is weak.",
+  },
+  {
+    question: "What if I do not know what to ask?",
+    answer:
+      "Start with your current situation and the outcome you want. For example, you can say you are unsure about consulting versus analytics, or that your resume is weak for a specific role, or that you have an interview tomorrow and need a sprint plan. CareerOS is designed to clarify the problem first, then coach the next step.",
   },
 ];

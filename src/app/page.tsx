@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, PlayCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { ComparisonSection } from "@/components/site/comparison-section";
 import { HomeOutcomeCard } from "@/components/site/home-outcome-card";
 import { JourneySection } from "@/components/site/journey-section";
@@ -27,8 +27,7 @@ export default function Home() {
             </Button>
             <Button asChild variant="secondary" size="lg">
               <Link href="/demo">
-                <PlayCircle className="size-4" />
-                Watch 60 Second Demo
+                See Examples
               </Link>
             </Button>
           </>

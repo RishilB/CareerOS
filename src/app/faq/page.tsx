@@ -6,7 +6,7 @@ import { faqItems } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "FAQ",
-  description: "Frequently asked questions about CareerOS.",
+  description: "Frequently asked questions about CareerOS and how students should use it.",
 };
 
 export default function FaqPage() {
@@ -15,8 +15,8 @@ export default function FaqPage() {
       <PageHero
         eyebrow="FAQ"
         title="Questions students will naturally ask before they commit."
-        subtitle="Short answers that reduce hesitation."
-        description="CareerOS should feel simple, useful, and trustworthy. This page closes the last few gaps before a student activates it."
+        subtitle="Clear answers that explain how CareerOS works in practice."
+        description="CareerOS should feel simple, useful, and trustworthy. This page answers the common product and usage questions that matter before activation."
       />
 
       <Container>
