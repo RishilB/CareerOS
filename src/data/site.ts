@@ -54,7 +54,6 @@ export type ActivationPlatform = {
   webHref: string;
   appHref?: string;
   fallbackHref?: string;
-  rating: number;
   promptRequired: boolean;
   steps: string[];
 };
@@ -314,8 +313,8 @@ export const activationPlatforms: ActivationPlatform[] = [
     description:
       "The full CareerOS experience. Students open the dedicated GPT and start guided onboarding immediately.",
     webHref: careerOsGptUrl,
+    appHref: careerOsGptUrl,
     fallbackHref: careerOsGptUrl,
-    rating: 5,
     promptRequired: false,
     steps: [
       "Tap Open CareerOS GPT",
@@ -338,7 +337,6 @@ export const activationPlatforms: ActivationPlatform[] = [
     webHref: "https://claude.ai",
     appHref: "claude://",
     fallbackHref: "https://claude.ai",
-    rating: 4,
     promptRequired: true,
     steps: [
       "Copy the CareerOS setup prompt",
@@ -361,7 +359,6 @@ export const activationPlatforms: ActivationPlatform[] = [
     webHref: "https://gemini.google.com",
     appHref: "gemini://",
     fallbackHref: "https://gemini.google.com",
-    rating: 4,
     promptRequired: true,
     steps: [
       "Copy the CareerOS setup prompt",
@@ -369,13 +366,6 @@ export const activationPlatforms: ActivationPlatform[] = [
       "Paste the prompt and press send",
     ],
   },
-];
-
-export const activationSuccessFlow = [
-  "Open CareerOS GPT",
-  "Answer onboarding questions",
-  "Create your Career Profile",
-  "Start career coaching",
 ];
 
 export const toolResources: ToolResource[] = [

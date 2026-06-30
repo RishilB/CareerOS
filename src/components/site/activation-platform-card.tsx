@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { Check, LoaderCircle, Sparkles, Star } from "lucide-react";
+import { Check, LoaderCircle, Sparkles } from "lucide-react";
 import type { ActivationPlatform } from "@/data/site";
 import { cn } from "@/lib/utils";
 import { Reveal } from "@/components/site/reveal";
@@ -19,6 +19,14 @@ export function ActivationPlatformCard({
 }: ActivationPlatformCardProps) {
   const [launching, setLaunching] = useState(false);
 
+  function isMobileDevice() {
+    if (typeof navigator === "undefined") {
+      return false;
+    }
+
+    return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+  }
+
   function launchInNewTab() {
     if (platform.status === "coming-soon") {
       return;
@@ -29,6 +37,36 @@ export function ActivationPlatformCard({
     window.setTimeout(() => setLaunching(false), 400);
   }
 
+  function launchAppLink(appHref: string, fallbackHref: string) {
+    if (platform.status === "coming-soon") {
+      return;
+    }
+
+    setLaunching(true);
+
+    const fallbackTimer = window.setTimeout(() => {
+      if (!document.hidden) {
+        window.location.href = fallbackHref;
+      }
+      setLaunching(false);
+    }, 1400);
+
+    const clear = () => {
+      window.clearTimeout(fallbackTimer);
+      document.removeEventListener("visibilitychange", onVisibilityChange);
+      setLaunching(false);
+    };
+
+    function onVisibilityChange() {
+      if (document.hidden) {
+        clear();
+      }
+    }
+
+    document.addEventListener("visibilitychange", onVisibilityChange);
+    window.location.href = appHref;
+  }
+
   async function handlePrimary() {
     if (platform.promptRequired && onCopyPrompt) {
       try {
@@ -36,6 +74,11 @@ export function ActivationPlatformCard({
       } catch {
         // Continue opening the platform so the student can still use manual setup.
       }
+    }
+
+    if (isMobileDevice() && platform.appHref) {
+      launchAppLink(platform.appHref, platform.fallbackHref ?? platform.webHref);
+      return;
     }
 
     launchInNewTab();
@@ -68,17 +111,6 @@ export function ActivationPlatformCard({
             </div>
             <p className="mt-2 text-sm text-muted">{platform.description}</p>
           </div>
-        </div>
-        <div className="flex items-center gap-1 text-amber-300">
-          {Array.from({ length: 5 }).map((_, index) => (
-            <Star
-              key={index}
-              className={cn(
-                "size-4",
-                index < platform.rating ? "fill-current" : "text-white/15",
-              )}
-            />
-          ))}
         </div>
       </div>
 
