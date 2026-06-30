@@ -40,13 +40,13 @@ export function PromptLibrary({ prompts }: PromptLibraryProps) {
     <div className="space-y-5">
       <div className="relative">
         <Search className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-muted" />
-        <input
+          <input
           type="search"
           value={query}
           onChange={(event) => setQuery(event.target.value)}
           placeholder="Search prompts by resume, interview, JD, LinkedIn, networking, or learning..."
           className={cn(
-            "h-12 w-full rounded-2xl border border-border bg-background/70 px-11 pr-24 text-sm text-foreground",
+            "h-12 w-full rounded-2xl border border-border bg-surface-soft px-11 pr-24 text-sm text-foreground",
             "placeholder:text-muted focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30",
           )}
           aria-label="Search CareerOS prompts"
@@ -81,7 +81,7 @@ export function PromptLibrary({ prompts }: PromptLibraryProps) {
           ))}
         </div>
       ) : (
-        <div className="rounded-[24px] border border-border bg-background/55 p-6 text-sm text-muted">
+        <div className="rounded-[24px] border border-border bg-surface-faint p-6 text-sm text-muted">
           No prompts match that search. Try a different keyword like resume, interview, JD, or networking.
         </div>
       )}

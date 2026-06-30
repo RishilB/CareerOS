@@ -8,6 +8,31 @@ import { BrandMark } from "@/components/site/brand-mark";
 import { navItems } from "@/data/site";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/site/theme-toggle";
+
+const routeAliases: Record<string, string> = {
+  "/features": "/capabilities",
+  "/examples": "/demo",
+};
+
+function normalizePath(path: string) {
+  if (path.length > 1 && path.endsWith("/")) {
+    return path.slice(0, -1);
+  }
+
+  return path;
+}
+
+function isActiveRoute(pathname: string, href: string) {
+  const normalizedPath = normalizePath(routeAliases[pathname] ?? pathname);
+  const normalizedHref = normalizePath(href);
+
+  if (normalizedPath === normalizedHref) {
+    return true;
+  }
+
+  return normalizedPath.startsWith(`${normalizedHref}/`);
+}
 
 export function Navigation() {
   const pathname = usePathname();
@@ -25,15 +50,17 @@ export function Navigation() {
 
             <nav className="hidden items-center gap-1 md:flex">
               {navItems.map((item) => {
-                const active = pathname === item.href;
+                const active = isActiveRoute(pathname, item.href);
                 return (
                   <Link
                     key={item.href}
                     href={item.href}
                     onClick={() => setOpen(false)}
+                    aria-current={active ? "page" : undefined}
                     className={cn(
                       "rounded-full px-4 py-2 text-sm text-muted hover:text-foreground",
-                      active && "bg-white/8 text-foreground",
+                      active &&
+                        "border border-accent/25 bg-accent-soft text-foreground shadow-[0_0_0_1px_rgba(56,189,248,0.12)]",
                     )}
                   >
                     {item.label}
@@ -42,7 +69,8 @@ export function Navigation() {
               })}
             </nav>
 
-            <div className="hidden md:block">
+            <div className="hidden items-center gap-2 md:flex">
+              <ThemeToggle />
               <Button asChild size="sm">
                 <Link href="/activate" onClick={() => setOpen(false)}>
                   Activate
@@ -52,7 +80,7 @@ export function Navigation() {
 
             <button
               type="button"
-              className="inline-flex size-11 items-center justify-center rounded-2xl border border-border bg-white/5 text-foreground md:hidden"
+              className="inline-flex size-11 items-center justify-center rounded-2xl border border-border bg-surface-soft text-foreground md:hidden"
               aria-expanded={open}
               aria-label={open ? "Close menu" : "Open menu"}
               onClick={() => setOpen((current) => !current)}
@@ -62,18 +90,20 @@ export function Navigation() {
           </div>
 
           {open ? (
-            <div className="mt-4 rounded-[24px] border border-border bg-background/95 p-3 shadow-2xl shadow-sky-950/25 md:hidden">
+            <div className="mt-4 rounded-[24px] border border-border bg-surface/95 p-3 shadow-2xl shadow-sky-950/25 md:hidden">
               <nav className="grid gap-2">
                 {navItems.map((item) => {
-                  const active = pathname === item.href;
+                  const active = isActiveRoute(pathname, item.href);
                   return (
                     <Link
                       key={item.href}
                       href={item.href}
                       onClick={() => setOpen(false)}
+                      aria-current={active ? "page" : undefined}
                       className={cn(
-                        "rounded-2xl border border-transparent px-4 py-3 text-sm text-muted hover:border-border hover:bg-white/5 hover:text-foreground",
-                        active && "bg-white/8 text-foreground",
+                        "rounded-2xl border border-transparent px-4 py-3 text-sm text-muted hover:border-border hover:bg-surface-soft hover:text-foreground",
+                        active &&
+                          "border-accent/25 bg-accent-soft text-foreground shadow-[0_0_0_1px_rgba(56,189,248,0.12)]",
                       )}
                     >
                       {item.label}
@@ -81,7 +111,8 @@ export function Navigation() {
                   );
                 })}
               </nav>
-              <div className="mt-3">
+              <div className="mt-3 grid gap-2">
+                <ThemeToggle showLabel className="w-full justify-between px-4" />
                 <Button asChild className="w-full" size="sm">
                   <Link href="/activate" onClick={() => setOpen(false)}>
                     Activate CareerOS

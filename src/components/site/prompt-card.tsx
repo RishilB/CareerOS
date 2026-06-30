@@ -23,11 +23,11 @@ export function PromptCard({ title, text, category, inputHint }: PromptCardProps
   }
 
   return (
-    <Reveal className="rounded-[24px] border border-border bg-background/55 p-5">
+    <Reveal className="rounded-[24px] border border-border bg-surface-faint p-5">
       <div className="flex items-center justify-between gap-3">
         <h3 className="text-base font-semibold text-foreground">{title}</h3>
         <div className="flex items-center gap-2">
-          <span className="rounded-full border border-white/8 bg-white/5 px-3 py-1 text-xs text-muted">
+          <span className="rounded-full border border-border/70 bg-surface-chip px-3 py-1 text-xs text-muted">
             {category}
           </span>
           <Button

@@ -7,7 +7,7 @@ type SpecializationCardProps = {
 
 export function SpecializationCard({ pack }: SpecializationCardProps) {
   return (
-    <Reveal className="rounded-[26px] border border-border bg-background/55 p-5">
+    <Reveal className="rounded-[26px] border border-border bg-surface-faint p-5">
       <h3 className="text-xl font-semibold text-foreground">{pack.name}</h3>
       <p className="mt-2 text-sm text-muted">{pack.focus}</p>
 
@@ -40,7 +40,7 @@ export function SpecializationCard({ pack }: SpecializationCardProps) {
             {pack.targetRoles.map((role) => (
               <span
                 key={role}
-                className="rounded-full border border-border bg-surface/60 px-3 py-1 text-xs text-foreground/90"
+                className="rounded-full border border-border bg-surface-chip px-3 py-1 text-xs text-foreground/90"
               >
                 {role}
               </span>
@@ -88,7 +88,7 @@ export function SpecializationCard({ pack }: SpecializationCardProps) {
             {pack.resumeKeywords.map((keyword) => (
               <span
                 key={keyword}
-                className="rounded-full border border-border bg-surface/60 px-3 py-1 text-xs text-foreground/90"
+                className="rounded-full border border-border bg-surface-chip px-3 py-1 text-xs text-foreground/90"
               >
                 {keyword}
               </span>
@@ -142,7 +142,7 @@ export function SpecializationCard({ pack }: SpecializationCardProps) {
         </div>
       ) : null}
 
-      <div className="mt-5 rounded-2xl border border-white/8 bg-surface/60 p-4">
+      <div className="mt-5 rounded-2xl border border-border/70 bg-surface-chip p-4">
         <p className="text-xs font-medium uppercase tracking-[0.12em] text-accent">
           Career advice
         </p>

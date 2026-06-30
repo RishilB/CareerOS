@@ -26,9 +26,9 @@ const cards = [
 
 export function PreviewPanel() {
   return (
-    <Reveal className="grid-glow w-full rounded-[30px] border border-border bg-background/75 p-3 sm:p-4">
-      <div className="rounded-[24px] border border-white/8 bg-surface-strong p-3 shadow-2xl shadow-sky-950/20 sm:p-4">
-        <div className="flex items-center justify-between border-b border-white/8 pb-3">
+    <Reveal className="grid-glow w-full rounded-[30px] border border-border bg-surface-faint p-3 sm:p-4">
+      <div className="rounded-[24px] border border-border/70 bg-surface-strong p-3 shadow-2xl shadow-sky-950/20 sm:p-4">
+        <div className="flex items-center justify-between border-b border-border/70 pb-3">
           <div>
             <p className="text-sm font-medium text-foreground">Your AI Career Coach</p>
             <p className="text-xs text-muted">A repeatable student growth system</p>
@@ -43,9 +43,9 @@ export function PreviewPanel() {
             const Icon = card.icon;
 
             return (
-              <div key={card.label} className="rounded-2xl border border-border bg-white/[0.03] p-3">
+              <div key={card.label} className="rounded-2xl border border-border bg-surface-chip p-3">
                 <div className="flex items-start gap-4 sm:items-center">
-                  <span className="flex size-9 shrink-0 items-center justify-center rounded-2xl bg-white/6">
+                  <span className="flex size-9 shrink-0 items-center justify-center rounded-2xl bg-surface-soft">
                     <Icon className="size-4 text-accent" />
                   </span>
                   <div className="min-w-0">

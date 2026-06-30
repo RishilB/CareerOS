@@ -10,7 +10,7 @@ type BrandMarkProps = {
 export function BrandMark({ compact = false, className }: BrandMarkProps) {
   return (
     <div className={cn("flex items-center gap-3", className)}>
-      <span className="relative flex size-10 overflow-hidden rounded-2xl border border-border bg-white/8 shadow-lg shadow-sky-950/20">
+      <span className="relative flex size-10 overflow-hidden rounded-2xl border border-border bg-surface-soft shadow-lg shadow-sky-950/20">
         <Image
           src={withBasePath("/careeros-mark.png")}
           alt=""

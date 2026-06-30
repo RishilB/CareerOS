@@ -18,7 +18,7 @@ export function DemoCard({ demo }: DemoCardProps) {
     <Reveal className="rounded-[28px] border border-border bg-surface/75 p-5 backdrop-blur sm:p-6">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         <div className="flex items-start gap-3">
-          <span className="flex size-10 shrink-0 items-center justify-center rounded-2xl border border-border bg-white/5 text-accent">
+          <span className="flex size-10 shrink-0 items-center justify-center rounded-2xl border border-border bg-surface-chip text-accent">
             <MessageSquareText className="size-4" />
           </span>
           <div>
@@ -41,7 +41,7 @@ export function DemoCard({ demo }: DemoCardProps) {
         </Button>
       </div>
 
-      <div className="mt-5 grid gap-3 rounded-3xl border border-white/8 bg-background/45 p-4">
+      <div className="mt-5 grid gap-3 rounded-3xl border border-border/70 bg-surface-faint p-4">
         <div>
           <p className="text-xs font-medium uppercase tracking-[0.12em] text-accent">
             Best use
@@ -69,7 +69,7 @@ export function DemoCard({ demo }: DemoCardProps) {
                     "rounded-3xl border px-4 py-4",
                     isCareerOS
                       ? "border-accent/20 bg-accent-soft"
-                      : "border-white/8 bg-background/55",
+                      : "border-border/70 bg-surface-faint",
                   )}
                 >
                   <div className="flex items-center justify-between gap-3">

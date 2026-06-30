@@ -15,7 +15,7 @@ export function FaqAccordion({ items }: FaqAccordionProps) {
         <Accordion.Item
           key={item.question}
           value={item.question}
-          className="rounded-[24px] border border-border bg-background/55 px-5"
+          className="rounded-[24px] border border-border bg-surface-faint px-5"
         >
           <Accordion.Header>
             <Accordion.Trigger className="group flex w-full items-center justify-between gap-4 py-5 text-left">

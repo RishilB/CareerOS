@@ -10,7 +10,7 @@ export function HomeOutcomeCard({ item }: HomeOutcomeCardProps) {
 
   return (
     <Reveal className="rounded-[26px] border border-border bg-surface-strong/90 p-5 shadow-lg shadow-sky-950/10 sm:p-6">
-      <span className="flex size-11 items-center justify-center rounded-2xl bg-white/7">
+      <span className="flex size-11 items-center justify-center rounded-2xl bg-surface-chip">
         <Icon className="size-5 text-accent" />
       </span>
       <h3 className="mt-4 text-lg font-semibold text-foreground">{item.title}</h3>

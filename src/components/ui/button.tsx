@@ -11,8 +11,8 @@ const buttonVariants = cva(
         default:
           "bg-foreground text-background hover:bg-[#d7dde3]",
         secondary:
-          "border border-border bg-white/5 text-foreground hover:bg-white/10",
-        ghost: "text-foreground hover:bg-white/8",
+          "border border-border bg-surface-soft text-foreground hover:bg-surface",
+        ghost: "text-foreground hover:bg-surface-soft",
       },
       size: {
         default: "h-11 px-5",

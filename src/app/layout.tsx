@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Footer } from "@/components/site/footer";
 import { Navigation } from "@/components/site/navigation";
 import { withBasePath } from "@/lib/base-path";
@@ -46,8 +47,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full antialiased dark">
+    <html lang="en" className="h-full antialiased" data-theme="dark" suppressHydrationWarning>
       <body className="min-h-full font-sans text-foreground">
+        <Script id="theme-init" strategy="beforeInteractive">
+          {`(function(){try{var key='careeros-theme';var stored=localStorage.getItem(key);var theme=(stored==='light'||stored==='dark')?stored:(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.dataset.theme=theme;document.documentElement.style.colorScheme=theme;}catch(e){document.documentElement.dataset.theme='dark';document.documentElement.style.colorScheme='dark';}})();`}
+        </Script>
         <div className="relative flex min-h-screen flex-col">
           <Navigation />
           <main className="flex-1 pt-20">{children}</main>

@@ -10,13 +10,13 @@ export function FeatureCard({ feature }: FeatureCardProps) {
 
   return (
     <Reveal className="rounded-[28px] border border-border bg-surface/70 p-6 backdrop-blur">
-      <span className="flex size-12 items-center justify-center rounded-2xl bg-white/7">
+      <span className="flex size-12 items-center justify-center rounded-2xl bg-surface-chip">
         <Icon className="size-5 text-accent" />
       </span>
       <h3 className="mt-5 text-xl font-semibold text-foreground">{feature.title}</h3>
       <p className="mt-3 text-sm text-foreground/90">{feature.whatItDoes}</p>
       <p className="mt-4 text-sm text-muted">{feature.whyItMatters}</p>
-      <div className="mt-5 rounded-2xl border border-white/8 bg-background/55 p-4">
+      <div className="mt-5 rounded-2xl border border-border/70 bg-surface-faint p-4">
         <p className="text-xs font-medium uppercase tracking-[0.12em] text-accent">
           Expected outcome
         </p>

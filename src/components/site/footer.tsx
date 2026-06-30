@@ -5,7 +5,7 @@ import { footerLinks } from "@/data/site";
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/6 py-10">
+    <footer className="border-t border-border/70 py-10">
       <Container className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
         <div className="max-w-md">
           <BrandMark compact />

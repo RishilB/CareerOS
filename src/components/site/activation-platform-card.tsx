@@ -90,7 +90,7 @@ export function ActivationPlatformCard({
         <div className="flex items-start gap-4">
           <span
             className={cn(
-              "flex size-12 shrink-0 items-center justify-center rounded-2xl border border-white/10 p-2 shadow-lg shadow-sky-950/20",
+              "flex size-12 shrink-0 items-center justify-center rounded-2xl border border-border/70 p-2 shadow-lg shadow-sky-950/20",
               platform.accentClass,
             )}
           >
@@ -105,7 +105,7 @@ export function ActivationPlatformCard({
           <div>
             <div className="flex flex-wrap items-center gap-2">
               <h3 className="text-xl font-semibold text-foreground">{platform.name}</h3>
-              <span className="rounded-full border border-border bg-white/5 px-3 py-1 text-xs font-medium text-muted">
+              <span className="rounded-full border border-border bg-surface-chip px-3 py-1 text-xs font-medium text-muted">
                 {platform.recommendation}
               </span>
             </div>
@@ -118,9 +118,9 @@ export function ActivationPlatformCard({
         {platform.steps.map((step, index) => (
           <div
             key={step}
-            className="flex items-center gap-3 rounded-2xl border border-white/8 bg-background/55 px-4 py-3"
+            className="flex items-center gap-3 rounded-2xl border border-border/70 bg-surface-faint px-4 py-3"
           >
-            <span className="inline-flex size-7 items-center justify-center rounded-full bg-white/8 text-xs font-semibold text-foreground">
+            <span className="inline-flex size-7 items-center justify-center rounded-full bg-surface-chip text-xs font-semibold text-foreground">
               {index + 1}
             </span>
             <p className="text-sm text-foreground/90">{step}</p>

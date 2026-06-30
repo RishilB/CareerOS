@@ -91,7 +91,7 @@ export function ActivateExperience() {
       <section className="hidden rounded-[28px] border border-border bg-surface/60 p-6 backdrop-blur lg:block">
         <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-white/5 px-3 py-1 text-xs font-medium text-muted">
+            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-surface-chip px-3 py-1 text-xs font-medium text-muted">
               <ScanLine className="size-3.5 text-accent" />
               Seminar support
             </div>
@@ -103,7 +103,7 @@ export function ActivateExperience() {
               CareerOS GPT without copying a setup prompt manually.
             </p>
           </div>
-          <div className="grid-glow rounded-[28px] border border-border bg-background/60 p-6">
+          <div className="grid-glow rounded-[28px] border border-border bg-surface-faint p-6">
             <div className="mx-auto flex aspect-square max-w-[240px] items-center justify-center rounded-[24px] border border-border bg-surface-strong p-5">
               {qrDataUrl ? (
                 <Image
@@ -114,7 +114,7 @@ export function ActivateExperience() {
                   className="h-full w-full rounded-[18px]"
                 />
               ) : (
-                <div className="flex h-full w-full items-center justify-center rounded-[18px] border border-border/70 bg-background/70 text-center text-sm text-muted">
+                <div className="flex h-full w-full items-center justify-center rounded-[18px] border border-border/70 bg-surface-faint text-center text-sm text-muted">
                   Generating QR code...
                 </div>
               )}

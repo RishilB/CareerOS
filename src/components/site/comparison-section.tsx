@@ -21,7 +21,7 @@ export function ComparisonSection() {
               {column.bullets.map((bullet) => (
                 <li
                   key={bullet}
-                  className="rounded-2xl border border-white/8 bg-background/55 px-4 py-3 text-sm text-muted"
+                  className="rounded-2xl border border-border/70 bg-surface-faint px-4 py-3 text-sm text-muted"
                 >
                   {bullet}
                 </li>

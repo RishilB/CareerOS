@@ -22,7 +22,7 @@ export default function DemoPage() {
         aside={
           <div className="relative w-full max-w-[560px]">
             <div className="absolute inset-0 rounded-[32px] bg-[radial-gradient(circle_at_50%_35%,rgba(14,165,233,0.18),transparent_58%),radial-gradient(circle_at_50%_72%,rgba(125,211,252,0.12),transparent_38%)] blur-3xl" />
-            <div className="relative overflow-hidden rounded-[32px] border border-white/10 bg-surface/60 p-4 shadow-[0_24px_80px_rgba(2,12,27,0.35)]">
+            <div className="relative overflow-hidden rounded-[32px] border border-border/70 bg-surface/60 p-4 shadow-[0_24px_80px_rgba(2,12,27,0.35)]">
               <Image
                 src={withBasePath("/demo-hero.png")}
                 alt="CareerOS example conversations illustration"
